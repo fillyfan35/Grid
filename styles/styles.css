@@ -1,7 +1,112 @@
+a {
+	text-decoration: none;
+}
+nav {
+    width:100%;
+}
+#left-navigation {
+	list-style: none;
+    padding: 0;
+    z-index: 15;
+    display: flex;
+    order: 1;
+    /*height: 60px;*/
+    justify-content: space-between;
+    -webkit-margin-before: 0;
+    -webkit-margin-after: 0;
+    -webkit-margin-start: 0px;
+    -webkit-margin-end: 0px;
+    -webkit-padding-start: 0;
+    /*margin: 0 40px 0 -40px;*/
+}
+#right-navigation {
+	justify-content: flex-end;
+}
+#home-logo {
+	justify-content: center;
+}
+#left-navigation, #right-navigation {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: nowrap;
+}
+#left-navigation li, #right-navigation li {
+    list-style: none;
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+}
+.bucksfor {
+    font-style: italic;
+    font-weight: normal;
+    display: block;
+    line-height: 1em;
+    font-size: .9em;
+    margin: 3px 0 2px;
+    color: #000;
+}
+.bucksfor-target {
+    text-transform: uppercase;
+    font-weight: 300;
+    font-size: 1.3em;
+    display: inline-block;
+    line-height: 1em;
+    color: #000;
+}
+.bucksfor-target::before {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    margin: 0 5px 0 0;
+    content: "\f0c0";
+}
+.bucksfor-target-students::before {
+    content: "\f19d";
+}
+.bucksfor-target-community::before {
+    content: "\f0c0";
+}
+.bucksfor-target-career::before {
+    content: "\f0b1";
+}
+
 @supports (grid-area: auto) {
 	.site {
 		max-width: none;
 		display: grid;
-		grid-template-columns: auto;
+		grid-template-columns: 250px auto 250px;
+	}
+	header {
+		grid-column: 1/4;
+		grid-row: 1/2;
+		display: flex;
+		justify-content: center;
+	}
+	.body {
+		grid-column: 1/4;
+		grid-row: 2/3;
+	}
+	footer {
+		grid-column: 1/4;
+		grid-row: 3/4;
+	}
+	nav {
+		display: grid;
+	    grid-template-columns: 45% 150px 45%;
+	}
+	#left-navigation {
+		grid-column: 1/2;
+		grid-row: 1/2;
+	}
+	#right-navigation {
+		grid-column: 3/4;
+		grid-row: 1/2;
+	}
+	#home-logo {
+		grid-column: 2/3;
+		grid-row: 1/2;
 	}
 }
