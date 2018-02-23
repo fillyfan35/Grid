@@ -1,0 +1,7 @@
+@supports (grid-area: auto) {
+	.site {
+		max-width: none;
+		display: grid;
+		grid-template-columns: auto;
+	}
+}
